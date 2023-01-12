@@ -6,22 +6,22 @@
     ## For new community submitted templates visit: https://github.com/rconfig/rConfig-templates
 
 main:
-  name: "Dell 6248P Telnet Enable"
-  desc: "Dell 6248P Telnet Enable Description"
+  name: "ArubaS3500 SSH enable"
+  desc: "ArubaS3500 SSH enable"
 connect:
   # connection timeout in seconds
   timeout: 5
   # type either telnet or ssh - must be in lowercase
-  protocol: telnet
+  protocol: ssh
   # type port number for connection protocol choose from 1 - 65535
-  port: 23
+  port: 22
 auth:
   # Set username name prompt. Must be in quotes. If left blank, username will not be sent.
-  username: "User:"
+  username: "Username:"
   # Set password name prompt. Must be in quotes
   password: "Password:"
   # Set enable mode on or off
-  enable: On
+  enable: on
   # set enable mode command. Must be in quotes
   enableCmd: "enable"
   # set enable mode password prompt. Must be in quotes
@@ -34,16 +34,16 @@ config:
     # Experimental: Some vendors use different linebreak settings. Choose 'n' (default) or 'r'
     linebreak: "n"
     # Disable config scrolling/ paging command. on/off
-    paging: off
+    paging: on
     # Disable config scrolling/ paging command. Leave blank, or set as required. Must place command in quotations
-    pagingCmd: "terminal length 0"
+    pagingCmd: "no paging"
     # re-enable config scrolling/ paging command. Leave blank, or set as required. Must place command in quotations
-    resetPagingCmd: "terminal length 40"
+    resetPagingCmd: ""
     # Set pager prompt. Must place command in quotations
-    pagerPrompt: "--More-- or (q)uit"
+    pagerPrompt: "--MORE-- (q) quit (u) pageup (/) search (n) repeat"
     # Set pager prompt key-stroke. Must place command in quotations
     pagerPromptCmd: " "
     # Save configuration command. Leave blank, or set as required. Must be in quotes
-    saveConfig: "copy running-config startup-config"
+    saveConfig: "write memory"
     # Set exit command. Must place command in quotations
-    exitCmd: "quit"
+    exitCmd: "exit"
